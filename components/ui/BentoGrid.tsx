@@ -53,8 +53,8 @@ export const BentoGridItem = (props: BentoGridItemProps) => {
     spareImg,
   } = props
   const [copied, setCopied] = useState(false)
-  const leftLists = ['ReactJS', 'Express', 'Typescript']
-  const rightLists = ['VueJS', 'NuxtJS', 'GraphQL']
+  const leftLists = ['React Query','NextJS', 'Typescript']
+  const rightLists = ['TailwindCSS', 'ReactJS', 'Zustand']
   const defaultOptions = {
     loop: copied,
     autoplay: copied,
@@ -65,7 +65,7 @@ export const BentoGridItem = (props: BentoGridItemProps) => {
   }
 
   const handleCopy = () => {
-    const text = 'hsu@jsmastery.pro'
+    const text = 'k1rzfi80@gmail.com'
     navigator.clipboard.writeText(text)
     setCopied(true)
   }

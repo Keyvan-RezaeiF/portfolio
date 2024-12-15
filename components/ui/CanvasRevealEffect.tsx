@@ -1,6 +1,6 @@
 "use client"
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/utils"
 import { Canvas, useFrame, useThree } from "@react-three/fiber"
 import React, { useMemo, useRef } from "react"
 import * as THREE from "three"
@@ -113,7 +113,7 @@ const DotMatrix: React.FC<DotMatrixProps> = ({
         type: "uniform1f",
       },
     };
-  }, [colors, opacities, totalSize, dotSize]);
+  }, [colors, opacities, totalSize, dotSize])
 
   return (
     <Shader
@@ -186,68 +186,66 @@ const ShaderMaterial = ({
   maxFps?: number;
   uniforms: Uniforms;
 }) => {
-  const { size } = useThree();
-  const ref = useRef<THREE.Mesh>();
-  let lastFrameTime = 0;
+  const { size } = useThree()
+  const ref = useRef<THREE.Mesh>()
+  let lastFrameTime = 0
 
   useFrame(({ clock }) => {
-    if (!ref.current) return;
-    const timestamp = clock.getElapsedTime();
-    if (timestamp - lastFrameTime < 1 / maxFps) {
-      return;
-    }
-    lastFrameTime = timestamp;
+    if (!ref.current) return
+    const timestamp = clock.getElapsedTime()
+    if (timestamp - lastFrameTime < 1 / maxFps) return
+    lastFrameTime = timestamp
 
-    const material: any = ref.current.material;
-    const timeLocation = material.uniforms.u_time;
-    timeLocation.value = timestamp;
-  });
+    const material: any = ref.current.material
+    const timeLocation = material.uniforms.u_time
+    timeLocation.value = timestamp
+  })
 
   const getUniforms = () => {
-    const preparedUniforms: any = {};
+    const preparedUniforms: any = {}
 
     for (const uniformName in uniforms) {
-      const uniform: any = uniforms[uniformName];
+      const uniform: any = uniforms[uniformName]
 
       switch (uniform.type) {
         case "uniform1f":
-          preparedUniforms[uniformName] = { value: uniform.value, type: "1f" };
-          break;
+          preparedUniforms[uniformName] = { value: uniform.value, type: "1f" }
+          break
         case "uniform3f":
           preparedUniforms[uniformName] = {
             value: new THREE.Vector3().fromArray(uniform.value),
             type: "3f",
-          };
-          break;
+          }
+          break
         case "uniform1fv":
-          preparedUniforms[uniformName] = { value: uniform.value, type: "1fv" };
-          break;
+          preparedUniforms[uniformName] = { value: uniform.value, type: "1fv" }
+          break
         case "uniform3fv":
           preparedUniforms[uniformName] = {
             value: uniform.value.map((v: number[]) =>
               new THREE.Vector3().fromArray(v)
             ),
             type: "3fv",
-          };
-          break;
+          }
+          break
         case "uniform2f":
           preparedUniforms[uniformName] = {
             value: new THREE.Vector2().fromArray(uniform.value),
             type: "2f",
-          };
-          break;
+          }
+          break
         default:
-          console.error(`Invalid uniform type for '${uniformName}'.`);
-          break;
+          console.error(`Invalid uniform type for '${uniformName}'.`)
+          break
       }
     }
 
-    preparedUniforms["u_time"] = { value: 0, type: "1f" };
+    preparedUniforms["u_time"] = { value: 0, type: "1f" }
     preparedUniforms["u_resolution"] = {
       value: new THREE.Vector2(size.width * 2, size.height * 2),
-    };
-    return preparedUniforms;
-  };
+    }
+    return preparedUniforms
+  }
 
   const material = useMemo(() => {
     const materialObject = new THREE.ShaderMaterial({
@@ -270,26 +268,26 @@ const ShaderMaterial = ({
       blending: THREE.CustomBlending,
       blendSrc: THREE.SrcAlphaFactor,
       blendDst: THREE.OneFactor,
-    });
+    })
 
-    return materialObject;
-  }, [size.width, size.height, source]);
+    return materialObject
+  }, [size.width, size.height, source])
 
   return (
     <mesh ref={ref as any}>
       <planeGeometry args={[2, 2]} />
       <primitive object={material} attach="material" />
     </mesh>
-  );
-};
+  )
+}
 
 const Shader: React.FC<ShaderProps> = ({ source, uniforms, maxFps = 60 }) => {
   return (
     <Canvas className="absolute inset-0  h-full w-full">
       <ShaderMaterial source={source} uniforms={uniforms} maxFps={maxFps} />
     </Canvas>
-  );
-};
+  )
+}
 interface ShaderProps {
   source: string;
   uniforms: {

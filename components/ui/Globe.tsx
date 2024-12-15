@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import { useEffect, useRef, useState } from "react"
 import { Color, Scene, Fog, PerspectiveCamera, Vector3 } from "three"
@@ -14,9 +14,9 @@ declare module "@react-three/fiber" {
 
 extend({ ThreeGlobe });
 
-const RING_PROPAGATION_SPEED = 3;
-const aspect = 1.2;
-const cameraZ = 300;
+const RING_PROPAGATION_SPEED = 3
+const aspect = 1.2
+const cameraZ = 300
 
 type Position = {
   order: number;
@@ -59,7 +59,7 @@ interface WorldProps {
   data: Position[];
 }
 
-let numbersOfRings = [0];
+let numbersOfRings = [0]
 
 export function Globe({ globeConfig, data }: WorldProps) {
   const [globeData, setGlobeData] = useState<

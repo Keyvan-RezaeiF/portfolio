@@ -1,6 +1,6 @@
 import React from 'react'
 import { FaLocationArrow } from 'react-icons/fa6'
-import { projects } from '@/data'
+import { projects } from '@/data/constants'
 import { CardBody, CardContainer, CardItem } from './ui/3dCard'
 
 const RecentProjects = () => {

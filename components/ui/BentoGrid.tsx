@@ -1,11 +1,11 @@
 import { useState, ReactNode } from 'react'
 import { IoCopyOutline } from 'react-icons/io5'
 import Lottie from 'react-lottie'
-import { cn } from '@/lib/utils'
+import { cn } from '@/utils'
 import animationData from '@/data/confetti.json'
 import { BackgroundGradientAnimation } from './GradientBg'
 import GridGlobe from './GridGlobe'
-import MagicButton from '../MagicButton'
+import MagicButton from './MagicButton'
 
 interface BentoGridProps {
   className?: string;
@@ -53,7 +53,7 @@ export const BentoGridItem = (props: BentoGridItemProps) => {
     spareImg,
   } = props
   const [copied, setCopied] = useState(false)
-  const leftLists = ['React Query','NextJS', 'Typescript']
+  const leftLists = ['React Query', 'NextJS', 'Typescript']
   const rightLists = ['TailwindCSS', 'ReactJS', 'Zustand']
   const defaultOptions = {
     loop: copied,

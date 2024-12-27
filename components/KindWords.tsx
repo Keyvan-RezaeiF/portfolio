@@ -7,7 +7,7 @@ import Companies from './Companies'
 
 const KindWords = () => {
   return (
-    <section id='testimonials' className='py-20 mt-24'>
+    <section id='testimonials' className='pt-10 py-5 mt-12'>
       <h1 className='heading'>
         Kind words from
         <span className='text-purple'> clients/teammates</span>
@@ -17,7 +17,7 @@ const KindWords = () => {
           <InfiniteMovingCards
             items={testimonials}
             direction='right'
-            speed='slow'
+            speed='normal'
           />
         </div>
         <Companies />

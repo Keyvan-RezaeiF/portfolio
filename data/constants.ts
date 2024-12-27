@@ -49,8 +49,8 @@ export const gridItems = [
 
   {
     id: 5,
-    title: 'Currently building a JS Animation library',
-    description: 'The Inside Scoop',
+    title: 'Currently building  A Next.js app revolutionizing expense management ...',
+    description: '',
     className: 'md:col-span-3 md:row-span-2',
     imgClassName: 'absolute right-0 bottom-0 md:w-96 w-60',
     titleClassName: 'justify-center md:justify-start lg:justify-center',
@@ -73,10 +73,10 @@ export const projects = [
   {
     id: 1,
     title: 'TKN - Video Conferencing App',
-    des: 'Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.',
+    des: 'Simplify your video conferencing experience with TKN. Seamlessly connect with colleagues and friends.',
     img: '/p2.svg',
     iconLists: ['/next.svg', '/tail.svg', '/ts.svg', '/stream.svg', '/c.svg'],
-    link: '/ui.yoom.com',
+    link: 'http://tkn-henna.vercel.app/',
   },
 ]
 
@@ -86,7 +86,21 @@ export const testimonials = [
     name: 'Mostafa Keshavarz',
     title: 'Front-End Team Lead at Namava',
     linkedinUrl: 'https://www.linkedin.com/in/mostafa-keshavarz-mehr/',
-    img: '/keshavarz.jpeg'
+    img: '/mostafa-keshavarz.jpeg'
+  },
+  {
+    quote: 'Keyvan is a highly skilled frontend developer who understands the impact of his work on user experience. Even though we were in different teams, he was always willing to jump in and collaborate, often initiating discussions to align our work and address any potential challenges early on. His problem-solving capabilities are top-notch; he excels at breaking down complex issues into manageable solutions. Keyvan’s exceptional communication skills and collaborative attitude made working together smooth and efficient, no matter the scope of the project. He would be a valuable asset to any team that requires both technical expertise and effective teamwork.',
+    name: 'Mohsen Mottaghi',
+    title: 'SRE & Cloud Engineer at CoDeTech',
+    linkedinUrl: 'https://www.linkedin.com/in/mohsenmottaghi/',
+    img: '/mohsen-mottaghi.jpeg'
+  },
+  {
+    quote: 'I had the pleasure of working alongside Keyvan on a complete website development project for our bachelor\'s thesis, and I couldn\'t have asked for a better front-end developer to collaborate with. His technical skills, attention to detail, and dedication to delivering seamless results on time were outstanding. Keyvan brought creative solutions, consistently ensuring the website\’s design and functionality aligned perfectly with our goals. His enthusiasm and commitment to quality made him a true asset to the project, and I\’m excited to see all the great work he\’ll continue to do!',
+    name: 'Sina Rostami',
+    title: 'PhD Student at Max Planck Institute',
+    linkedinUrl: 'https://www.linkedin.com/in/sina--rostami/',
+    img: '/sina-rostami.jpeg'
   },
 ]
 
@@ -121,30 +135,30 @@ export const workExperiences = [
   {
     id: 1,
     title: 'Frontend Engineer Intern',
-    desc: 'Assisted in the development of a web-based platform using React.js, enhancing interactivity.',
+    desc: 'Assisted in the development of a Soccer Prediction App using React.js, enhancing interactivity.',
     className: 'md:col-span-2',
     thumbnail: '/exp1.svg',
   },
   {
     id: 2,
-    title: 'Mobile App Dev - JSM Tech',
-    desc: 'Designed and developed mobile app for both iOS & Android platforms using React Native.',
+    title: 'Frontend Developer',
+    desc: 'Developed and maintained user-facing features using modern frontend technologies in a VOD company.',
     className: 'md:col-span-2',
-    thumbnail: '/exp2.svg',
+    thumbnail: '/exp4.svg',
   },
   {
     id: 3,
-    title: 'Freelance App Dev Project',
-    desc: 'Led the dev of a mobile app for a client, from initial concept to deployment on app stores.',
+    title: 'Frontend Developer',
+    desc: 'Developed a dynamic back-office platform using React.js for a car leasing company.',
     className: 'md:col-span-2',
-    thumbnail: '/exp3.svg',
+    thumbnail: '/exp4.svg',
   },
   {
     id: 4,
-    title: 'Lead Frontend Developer',
-    desc: 'Developed and maintained user-facing features using modern frontend technologies.',
+    title: 'Frontend Developer',
+    desc: 'Developed a web application utilizing BPMN to manage and optimize university operations for internship and project processes.',
     className: 'md:col-span-2',
-    thumbnail: '/exp4.svg',
+    thumbnail: '/exp1.svg',
   },
 ]
 

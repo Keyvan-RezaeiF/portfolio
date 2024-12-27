@@ -1,8 +1,8 @@
 import React from 'react'
-import { FaLocationArrow } from 'react-icons/fa6'
+// import { FaLocationArrow } from 'react-icons/fa6'
 import Spotlight from './ui/Spotlight'
 import TextGenerateEffect from './ui/TextGenerateEffect'
-import MagicButton from './ui/MagicButton'
+// import MagicButton from './ui/MagicButton'
 
 const Hero = () => {
   return (
@@ -30,19 +30,19 @@ const Hero = () => {
             Crafting Web Experiences That Speak to the Heart
           </h2>
           <TextGenerateEffect
-            className='text-center text-[40px] md:text-5xl lg:text-6xl w-[912px]'
+            className='max-w-[360px] text-center text-[28px] sm:text-[40px] md:text-5xl lg:text-6xl sm:max-w-[912px]'
             words='From Creativity in Code to Build Memorable Experiences'
           />
           <p className='text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl'>
             Hey! I&apos;m Keyvan, Your Go-To Developer for Immersive Web Design.
           </p>
-          <a href='/about'>
+          {/* <a href='#projects'>
             <MagicButton
               title='Show my work'
               icon={<FaLocationArrow />}
               position='right'
             />
-          </a>
+          </a> */}
         </div>
       </div>
     </div>
